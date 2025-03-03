@@ -24,14 +24,6 @@ public class AlumnoRepository {
             if (filasAfectadas == 0) {
                 throw new SQLException("No se pudo insertar el alumno.");
             }
-
-            try (ResultSet generatedKeys = stmt.getGeneratedKeys()) {
-                if (generatedKeys.next()) {
-                    alumno.setId(generatedKeys.getInt(1));
-                } else {
-                    throw new SQLException("No se pudo obtener el ID generado.");
-                }
-            }
         }
     }
 
