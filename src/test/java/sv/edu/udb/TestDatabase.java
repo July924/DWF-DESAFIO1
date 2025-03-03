@@ -34,16 +34,15 @@ public class TestDatabase {
         materiaRepository.agregarMateria(materia);
 
 // Recuperar la materia insertada (su ID se asigna en agregarMateria)
-//        Materia materiaGuardada = materiaRepository.obtenerMateriaPorId(materia.getId());
-//        assertNotNull(materiaGuardada);
-//        connection.commit();
-//
-//        assertTrue(materiaGuardada.getId() > 0, "El ID de la materia debería ser mayor que 0");
+       Materia materiaGuardada = materiaRepository.obtenerMateriaPorId(materia.getId());
+        assertNotNull(materiaGuardada);
+        connection.commit();
+       assertTrue(materiaGuardada.getId() > 0, "El ID de la materia debería ser mayor que 0");
 
         // Crear un alumno y asignarle la materia
         ResultSet rs = null;
-//        Alumno alumno = new Alumno((1), "MARIELA JULISSA", "VENTURA IRAHETA", materiaGuardada);
-//        alumnoRepository.agregarAlumno(alumno);
+       Alumno alumno = new Alumno((1), "MARIELA JULISSA", "VENTURA IRAHETA", materiaGuardada);
+        alumnoRepository.agregarAlumno(alumno);
         connection.commit();
 
 
